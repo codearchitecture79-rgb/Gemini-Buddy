@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gemini Assistant — Chat</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.0.0/showdown.min.js" defer></script>
+</head>
+
+<body>
+  <div class="app" id="app">
+    <aside class="sidebar" id="sidebar" aria-label="Recent chats">
+      <div class="logo" aria-hidden="true">
+        <div
+          style="width:36px;height:36;border-radius:9px;background:linear-gradient(180deg,var(--accent),#5a3eff);display:flex;align-items:center;justify-content:center;color:white;font-weight:700">
+          G</div>
+        <div>
+          Gemini
+          <div style="font-size:12px;color:var(--muted)">Assistant</div>
+        </div>
+      </div>
+
+      <button class="new-chat" id="newChatBtn" title="New chat">+ New chat</button>
+
+      <div class="history" id="history" role="list" aria-label="Chat history">
+        <!-- Example items -->
+        <!-- <div class="chat-item" role="button" tabindex="0" title="Conversation 1">
+          <div class="dot">A</div>
+          <div>
+            <div style="font-weight:600">Conversation 1</div>
+            <div style="font-size:12px;color:var(--muted)">Yesterday — short summary</div>
+          </div>
+        </div>
+        <div class="chat-item" role="button" tabindex="0" title="Conversation 2">
+          <div class="dot">B</div>
+          <div>
+            <div style="font-weight:600">Ideas</div>
+            <div style="font-size:12px;color:var(--muted)">Brainstorm session</div>
+          </div>
+        </div> -->
+      </div>
+
+      <div style="padding-top:8px;border-top:1px solid rgba(255,255,255,0.02);">
+        <div class="muted">Model</div>
+        <div style="font-weight:600">Gemini</div>
+      </div>
+    </aside>
+
+    <main class="main" id="main">
+      <div class="header">
+        <div>
+          <div class="title">Gemini Assistant</div>
+          <div class="sub">A Google Gemini-based AI Chatbot</div>
+        </div>
+
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+          <svg viewBox="0 0 24 24" fill="none" width="20" height="20">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="messages" id="messages" aria-live="polite" aria-label="Conversation">
+        <div class="center">
+          <div style="text-align:center">
+            <div style="font-weight:700;font-size:18px">Start a conversation</div>
+            <div style="margin-top:6px;color:var(--muted)">Ask anything — the assistant will respond.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="composer" role="region" aria-label="Message composer">
+        <div class="input-cont">
+          <div class="input-wrap">
+            <textarea id="prompt" placeholder="Ask Gemini Assistant"></textarea>
+          </div>
+          <button class="send-btn" id="sendBtn" aria-label="Send message" title="Send">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M22 2L11 13" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M22 2L15 22l-4-9-9-4 20-7z" stroke="white" stroke-width="0.8" stroke-linecap="round"
+                stroke-linejoin="round" opacity="0.9" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="../app.js" type="commonjs"></script>
+</body>
+
+</html>

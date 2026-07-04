@@ -1,4 +1,5 @@
 // Minimal, well-commented JS for UI interactions and mock Gemini API call.
+require('dotenv').config();
 
 function convertMarkdown(mdInput) {
   var converter = new showdown.Converter(),
@@ -15,8 +16,8 @@ const sidebar = document.getElementById('sidebar');
 const sidebarToggle = document.getElementById('sidebarToggle');
 const newChatBtn = document.getElementById('newChatBtn');
 
-const API_URL = 'https://ai-chatbot-delta-ashen.vercel.app/';
-const LOCAL_API_URL = 'http://localhost:3000/'
+const API_URL = process.env.API_URL;
+const LOCAL_API_URL = process.env.LOCAL_API_URL;
 
 // Utility: scroll messages to bottom smoothly
 function scrollToBottom() {
